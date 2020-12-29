@@ -1,4 +1,6 @@
 from django.db import models
+from rest_framework import serializers
+# from .models import File
 
 # Create your models here.
 
@@ -12,7 +14,9 @@ class ProductsItens(models.Model):
     nameProducts = models.CharField(max_length=60)
     price = models.PositiveBigIntegerField()
     quantity = models.PositiveBigIntegerField()
-    image = models.ImageField(upload_to=uploadImageProducts, blank=True, null=True)
+    SKU = models.CharField(max_length=60)
+    # image = models.ImageField(upload_to=uploadImageProducts, blank=True, null=True)
+    imageProducts = models.CharField(max_length=100, blank=True, null=False)
 
 class Customers(models.Model):
 
@@ -21,3 +25,13 @@ class Customers(models.Model):
     Email = models.CharField(max_length=60)
     Phone = models.PositiveBigIntegerField()
     End = models.CharField(max_length=60)
+
+class File(models.Model):
+
+    file = models.FileField(blank=False, null=False)
+
+    def __str__(self):
+
+        ProductsItens.imageProducts = self.file.name
+
+        return self.file.name

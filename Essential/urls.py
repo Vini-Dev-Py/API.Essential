@@ -36,5 +36,6 @@ urlpatterns = [
     # path('admin/', admin.site.urls),
     path('auth/', include('rest_framework.urls')),
     path('products/', include(ProductsRouter.urls)),
+    path('upload/', include('API.urls')),
     path('customers/', include(CustomersRouter.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
