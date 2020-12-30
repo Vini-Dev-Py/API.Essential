@@ -26,6 +26,17 @@ class Customers(models.Model):
     Phone = models.PositiveBigIntegerField()
     End = models.CharField(max_length=60)
 
+
+class Request(models.Model):
+
+    nameCustomersRequest = models.CharField(max_length=60)
+    date = models.CharField(max_length=60)
+    numberRequest = models.PositiveBigIntegerField()
+    endCustomersResquest = models.CharField(max_length=60)
+    resquestItems = models.CharField(max_length=60)
+    status = models.CharField(max_length=60)
+    shippingMethod = models.CharField(max_length=60)
+
 class File(models.Model):
 
     file = models.FileField(blank=False, null=False)

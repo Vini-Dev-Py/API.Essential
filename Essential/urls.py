@@ -19,7 +19,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path, include
 from rest_framework import routers
-from API.views import ProductsItensViewSet, CustomersViewSet
+from API.views import ProductsItensViewSet, CustomersViewSet, RequestViewSet
 
 ProductsRouter = routers.DefaultRouter()
 ProductsRouter.register(
@@ -31,6 +31,11 @@ CustomersRouter.register(
     'customers', CustomersViewSet, basename='customers'
 )
 
+RequestRouter = routers.DefaultRouter()
+RequestRouter.register(
+    'requests', RequestViewSet, basename='resquests'
+)
+
 urlpatterns = [
     path('', admin.site.urls),
     # path('admin/', admin.site.urls),
@@ -38,4 +43,5 @@ urlpatterns = [
     path('products/', include(ProductsRouter.urls)),
     path('upload/', include('API.urls')),
     path('customers/', include(CustomersRouter.urls)),
+    path('requests/', include(RequestRouter.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

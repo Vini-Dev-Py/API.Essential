@@ -3,8 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 
 from rest_framework import viewsets
-from .models import ProductsItens, Customers, File
-from .serializers import ProductsItensSerializer, CustomersSerializer, FileSerializer
+from .models import ProductsItens, Customers, File, Request
+from .serializers import ProductsItensSerializer, CustomersSerializer, FileSerializer, RequestSerializer
 
 from rest_framework.parsers import FileUploadParser
 from rest_framework.response import Response
@@ -21,6 +21,11 @@ class CustomersViewSet(viewsets.ModelViewSet):
 
     serializer_class = CustomersSerializer
     queryset = Customers.objects.all()
+
+class RequestViewSet(viewsets.ModelViewSet):
+
+    serializer_class = RequestSerializer
+    queryset = Request.objects.all()
 
 class FileUploadView(APIView):
     parser_class = (FileUploadParser,)

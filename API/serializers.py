@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import ProductsItens, Customers, File
+from .models import ProductsItens, Customers, File, Request
 
 class ProductsItensSerializer(serializers.ModelSerializer):
 
@@ -13,6 +13,13 @@ class CustomersSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = Customers
+        fields = '__all__'
+
+class RequestSerializer(serializers.ModelSerializer):
+
+    class Meta:
+
+        model = Request
         fields = '__all__'
 
 class FileSerializer(serializers.ModelSerializer):
