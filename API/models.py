@@ -30,10 +30,13 @@ class Customers(models.Model):
 class Request(models.Model):
 
     nameCustomersRequest = models.CharField(max_length=60)
+    CPF = models.PositiveBigIntegerField()
     date = models.CharField(max_length=60)
+    price = models.PositiveBigIntegerField()
     numberRequest = models.PositiveBigIntegerField()
     endCustomersResquest = models.CharField(max_length=60)
-    resquestItems = models.CharField(max_length=60)
+    resquestItems = models.CharField(max_length=255)
+    quantityItens = models.PositiveBigIntegerField()
     status = models.CharField(max_length=60)
     shippingMethod = models.CharField(max_length=60)
 
