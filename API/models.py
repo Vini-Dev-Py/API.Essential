@@ -21,7 +21,7 @@ class ProductsItens(models.Model):
 class Customers(models.Model):
 
     nameCustomers = models.CharField(max_length=60)
-    CPF = models.PositiveBigIntegerField()
+    CPF = models.CharField(max_length=11)
     Email = models.CharField(max_length=60)
     Phone = models.PositiveBigIntegerField()
     End = models.CharField(max_length=60)
@@ -34,7 +34,7 @@ class Request(models.Model):
     phone = models.CharField(max_length=60)
     CPF = models.CharField(max_length=11)
     date = models.CharField(max_length=60)
-    price = models.CharField(max_length=60)
+    price = models.PositiveBigIntegerField()
     numberRequest = models.CharField(max_length=10)
     CEP = models.CharField(max_length=60)
     endCustomersResquest = models.CharField(max_length=60)

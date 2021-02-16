@@ -59,6 +59,7 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:4200',
+    'http://localhost:5200'
 )
 
 ROOT_URLCONF = 'Essential.urls'
@@ -87,10 +88,21 @@ WSGI_APPLICATION = 'Essential.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ufwjxmwu',
+        'USER': 'ufwjxmwu',
+        'PASSWORD': 'McQyh8DLlr18avFNbifhIDbcCxIEtvBB',
+        'HOST': 'tuffi.db.elephantsql.com',
+        'PORT': '5432'
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
